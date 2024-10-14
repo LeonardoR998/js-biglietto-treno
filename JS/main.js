@@ -44,6 +44,7 @@ console.log(userKmplusnumKm);
 if (userAge < userAgeMin) {
   //    -applico uno sconto del 20%
   const sum = (userAge * userSaleMin) / 100;
+  outputmessage = "Hai uno sconto del 20% sul biglietto";
   console.log(sum);
 }
 
@@ -51,5 +52,10 @@ if (userAge < userAgeMin) {
 if (userAge > userAgeMax) {
   //    -applico uno sconto del 40%
   const sum = (userAge * userSaleMax) / 100;
+  outputmessage = "Hai uno sconto del 40% sul biglietto";
   console.log(sum);
 }
+
+// OUTPUT
+
+alert(outputmessage);
