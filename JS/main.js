@@ -19,7 +19,7 @@ const numKm = 0.21;
 const userSaleMin = 20;
 const userSaleMax = 40;
 const userAgeMin = 18;
-const userAgeMax = 66;
+const userAgeMax = 65;
 
 // RACCOLTA DATI //
 
@@ -40,16 +40,22 @@ console.log(userKm);
 const userKmplusnumKm = Math.floor(userKm * numKm);
 console.log(userKmplusnumKm);
 
+// SE l'utente ha un'età compresa fra i 18 e i 65
+if (userAge < userAgeMin < userAgeMax) {
+  // -non applico nessuno sconto
+  outputmessage = "Nessuno Sconto";
+}
+
 // SE l'utente è minorenne
-if (userAge < userAgeMin) {
+if (userAge <= userAgeMin) {
   //    -applico uno sconto del 20%
   const sum = (userAge * userSaleMin) / 100;
   outputmessage = "Hai uno sconto del 20% sul biglietto";
   console.log(sum);
 }
 
-// SE l'utente è over 65
-if (userAge > userAgeMax) {
+// ALTRIMENTI SE l'utente è over 65
+else if (userAge >= userAgeMax) {
   //    -applico uno sconto del 40%
   const sum = (userAge * userSaleMax) / 100;
   outputmessage = "Hai uno sconto del 40% sul biglietto";
