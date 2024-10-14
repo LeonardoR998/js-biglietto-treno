@@ -16,17 +16,21 @@ Sulla base di queste informazioni dovrà calcolare il prezzo totale del viaggio,
 // UTILS //
 
 const numKm = 0.21;
+const userSaleMin = 20;
+const userSaleMax = 40;
+const userAgeMin = 18;
+const userAgeMax = 66;
 
 // RACCOLTA DATI //
 
 // chiedo l'età del passeggero e la trasformo in numero
 
-let userAge = parseInt(prompt("Quanti anni hai?"));
+const userAge = parseInt(prompt("Quanti anni hai?"));
 console.log(userAge);
 
 // chiedo il numero di km che deve percorrere
 
-let userKm = parseInt(prompt("Quanti chilometri effettuerai?"));
+const userKm = parseInt(prompt("Quanti chilometri effettuerai?"));
 console.log(userKm);
 
 // ELABORAZIONE //
@@ -37,7 +41,15 @@ const userKmplusnumKm = Math.floor(userKm * numKm);
 console.log(userKmplusnumKm);
 
 // SE l'utente è minorenne
-//    -applico uno sconto del 20%
+if (userAge < userAgeMin) {
+  //    -applico uno sconto del 20%
+  const sum = (userAge * userSaleMin) / 100;
+  console.log(sum);
+}
 
 // SE l'utente è over 65
-//    -applico uno sconto del 40%
+if (userAge > userAgeMax) {
+  //    -applico uno sconto del 40%
+  const sum = (userAge * userSaleMax) / 100;
+  console.log(sum);
+}
